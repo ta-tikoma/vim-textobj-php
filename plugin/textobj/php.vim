@@ -6,14 +6,14 @@ augroup method_textobjs
     autocmd!
     autocmd FileType php call textobj#user#plugin('method', {
             \   '-': {
-            \     'select-a-function': 's:CurrentMethodA',
+            \     'select-a-function': 'textobj#php#select_method_a',
             \     'select-a': 'am',
-            \     'select-i-function': 's:CurrentMethodI',
+            \     'select-i-function': 'textobj#php#select_method_i',
             \     'select-i': 'im',
             \   },
             \ })
 
-    function! s:CurrentMethodA()
+    function! textobj#php#select_method_a()
         if search('[ ]\+\(private\|public\|protected\) function [a-zA-Z0-9_]\+(', 'bcW') == 0
             return 0
         endif
@@ -26,7 +26,7 @@ augroup method_textobjs
         return ['v', head_pos, tail_pos]
     endfunction
 
-    function! s:CurrentMethodI()
+    function! textobj#php#select_method_i()
         if search('[ ]\+\(private\|public\|protected\) function [a-zA-Z0-9_]\+(', 'bcW') == 0
             return 0
         endif
