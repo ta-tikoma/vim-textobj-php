@@ -1,6 +1,7 @@
 # About
 
-Vim text object plugin for PHP objects.
+Vim text object plugin for PHP objects:
+- **m**ethod
 
 # Install
 
